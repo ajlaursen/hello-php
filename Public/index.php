@@ -10,7 +10,7 @@
 
 <body>
 
-  <form action="index.php" method="get">
+  <form action="index.php" method="post">
 
 
     <input type="text" name="color" />
@@ -26,9 +26,9 @@
 
   <?php
 
-  $color = $_GET["color"];
-  $noun = $_GET["pluralNoun"];
-  $celeb = $_GET["celebrity"];
+  $color = $_POST["color"];
+  $noun = $_POST["pluralNoun"];
+  $celeb = $_POST["celebrity"];
 
   echo "roses are $color <br>";
   echo  "$noun are blue <br>";
