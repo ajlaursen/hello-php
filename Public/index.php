@@ -9,41 +9,22 @@
 </head>
 
 <body>
-  <form action="index.php" method="post">
+  <!-- <form action="index.php" method="post">
     what grade did you get: <input type="text" name="grade"> <br>
     <input type="submit">
 
-  </form>
+  </form> -->
 
 
   <?php
-  $grade = $_POST['grade'];
+  $index = 1;
+  while($index <= 100){
+    echo "$index<br>";
+    $index++;
+  };
  
 
-  function yourGrade($grade){
-    switch($grade){
-      case "A": 
-        echo "congrats you got an $grade";
-        break;
-      case "B": 
-        echo "you got a $grade";
-        break;
-      case "C": 
-        echo "you are average you got a $grade";
-        break;
-      case "D": 
-        echo "you can try harder you got a $grade";
-        break;
-      case "F": 
-        echo "you failed you got an $grade";
-        break;
-      default:
-      echo "not only are you bad at tests you're bad at typing";
-    }
-  }
   
-  yourGrade($grade)
-
   ?>
 
 
