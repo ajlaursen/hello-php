@@ -10,7 +10,7 @@
 
 <body>
 
-  <form action="index.php" method="post">
+  <!-- <form action="index.php" method="post">
 
 
     Apples: <input type="checkbox" name="fruits[]" value="apples" />
@@ -22,12 +22,12 @@
     <input type="submit" />
 
   </form>
-  <br>
+  <br> -->
 
   <?php
 
-  $fruits = $_POST["fruits"];
-  echo $fruits[0];
+  $grades = array("jim" => "A+", "pam" => "b");
+  echo $grades["jim"];
 
 
 
