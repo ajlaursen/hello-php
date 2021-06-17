@@ -18,10 +18,10 @@
 
   <?php
   $index = 1;
-  while($index <= 100){
+  do{
     echo "$index<br>";
     $index++;
-  };
+  }while($index <= 5);
  
 
   
