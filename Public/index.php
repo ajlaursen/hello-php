@@ -14,19 +14,20 @@
 
   <?php
 
-  $isMale = false;
-  $isTall = true;
 
-  if ($isMale && $isTall) {
-    echo "its a dude and tall";
-  } else if($isMale){
-    echo "its a short dude";
-  } else if($isTall){
-    echo "its a tall chica";
-  }else{
-    echo "its a short chica";
+
+  function getMax($num1, $num2)
+  {
+    if ($num1 > $num2) {
+      echo "$num1 is bigger than $num2<br>";
+    } else {
+      echo "$num1 is smaller than $num2<br>";
+    }
   };
 
+  getMax(20, 30);
+  getMax(40, 30);
+  getMax(500, 5000)
 
 
   ?>
