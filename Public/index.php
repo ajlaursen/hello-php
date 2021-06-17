@@ -13,28 +13,33 @@
 
 
   <?php
-class Book
+class Student
 {
-    public $title;
-    public $author;
-    public $pages;
+    public $name;
+    public $major;
+    public $gpa;
 
-    public function __construct($title, $author, $pages)
+    public function __construct($name, $major, $gpa)
     {
-        $this->title = $title;
-        $this->author = $author;
-        $this->pages = $pages;
+        $this->name = $name;
+        $this->major = $major;
+        $this->gpa = $gpa;
     }
-
+    public function hasHonors()
+    {
+        if ($this->gpa > 3.5) {
+            return "true";
+        } else {
+            return "false";
+        }
+    }
 }
 
-$book1 = new Book("harry potter", "jk rowling", "1200");
+$student1 = new Student("jim", "business", 2.8);
+$student2 = new Student("pam", "art", 3.6);
 
-$book2 = new Book("Lord of the rings", "tolkien", "1450");
-
-print_r($book1);
-
-print_r($book2);
+echo $student1->hasHonors();
+echo $student2->hasHonors();
 
 ?>
 
