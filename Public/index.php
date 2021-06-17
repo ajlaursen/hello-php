@@ -13,17 +13,25 @@
 
 
   <?php
-$title = "my first post";
-$author = "Mike";
-$wordCount = 400;
-include "article-header.php";
+class Book
+{
+    public $title;
+    public $author;
+    public $pages;
 
-?>
-  <?php
-$title = "my second post";
-$author = "Mike";
-$wordCount = 600;
-include "article-header.php";
+}
+
+$book1 = new Book;
+$book1->title = "harry potter";
+$book1->author = "jk rowling";
+$book1->pages = "1200";
+
+$book2 = new Book;
+$book2->title = "Lord of the Rings";
+$book2->author = "tolkien";
+$book2->pages = "1450";
+
+print_r($book2);
 
 ?>
 
