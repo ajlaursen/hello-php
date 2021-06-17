@@ -9,16 +9,23 @@
 </head>
 
 <body>
- 
+
 
 
   <?php
+$title = "my first post";
+$author = "Mike";
+$wordCount = 400;
+include "article-header.php";
 
-  include "header.html";
-  include "footer.html";
-  
-  ?>
+?>
+  <?php
+$title = "my second post";
+$author = "Mike";
+$wordCount = 600;
+include "article-header.php";
 
+?>
 
 </body>
 
