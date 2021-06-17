@@ -14,13 +14,18 @@
 
   <?php
 
-  $isMale = true;
+  $isMale = false;
+  $isTall = true;
 
-  if ($isMale) {
-    echo "its a dude";
-  } else {
-    echo "its a girl";
-  }
+  if ($isMale && $isTall) {
+    echo "its a dude and tall";
+  } else if($isMale){
+    echo "its a short dude";
+  } else if($isTall){
+    echo "its a tall chica";
+  }else{
+    echo "its a short chica";
+  };
 
 
 
