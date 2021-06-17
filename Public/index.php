@@ -10,36 +10,39 @@
 
 <body>
   <form action="index.php" method="post">
-    First Number: <input type="number" name="num1"> <br>
-    Operator: <input type="text" name="op"><br>
-    Second Number: <input type="number" name="num2"> <br>
+    what grade did you get: <input type="text" name="grade"> <br>
     <input type="submit">
 
   </form>
 
 
   <?php
-  $num1 = $_POST['num1'];
-  $num2 = $_POST['num2'];
-  $op = $_POST['op'];
+  $grade = $_POST['grade'];
+ 
 
-
-  function getCalc($num1, $num2, $op)
-  {
-    if ($op == "+") {
-      echo $num1 + $num2;
-    } elseif ($op == "-") {
-      echo $num1 - $num2;
-    }elseif ($op == "*") {
-    echo $num1 * $num2;
-    }elseif ($op == "/") {
-    echo $num1 / $num2;
-    }else{
-    echo "invalid operater $op";
+  function yourGrade($grade){
+    switch($grade){
+      case "A": 
+        echo "congrats you got an $grade";
+        break;
+      case "B": 
+        echo "you got a $grade";
+        break;
+      case "C": 
+        echo "you are average you got a $grade";
+        break;
+      case "D": 
+        echo "you can try harder you got a $grade";
+        break;
+      case "F": 
+        echo "you failed you got an $grade";
+        break;
+      default:
+      echo "not only are you bad at tests you're bad at typing";
     }
-  };
-  getCalc($num1, $num2, $op);
+  }
   
+  yourGrade($grade)
 
   ?>
 
