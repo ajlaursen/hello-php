@@ -9,22 +9,13 @@
 </head>
 
 <body>
-  <!-- <form action="index.php" method="post">
-    what grade did you get: <input type="text" name="grade"> <br>
-    <input type="submit">
-
-  </form> -->
+ 
 
 
   <?php
 
-  $names = array("jim", "bob", "george");
-  
- for( $i = 0; $i < count($names); $i++){
-  echo "$names[$i]<br>";
- };
- 
-
+  include "header.html";
+  include "footer.html";
   
   ?>
 
