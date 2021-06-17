@@ -10,30 +10,11 @@
 
 <body>
 
-  <form action="index.php" method="post">
-
-
-    <input type="text" name="color" />
-    <br>
-    <input type="text" name="pluralNoun" />
-    <br>
-    <input type="text" name="celebrity" />
-    <br>
-    <input type="submit" />
-
-  </form>
-  <br>
-
   <?php
 
-  $color = $_POST["color"];
-  $noun = $_POST["pluralNoun"];
-  $celeb = $_POST["celebrity"];
-
-  echo "roses are $color <br>";
-  echo  "$noun are blue <br>";
-  echo  "i love $celeb <br>";
-
+  $friends = array("mike", "karen", "jim", "alex");
+  $friends[10] = "art";
+  echo count($friends);
 
   ?>
 
