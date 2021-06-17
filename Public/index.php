@@ -19,17 +19,20 @@ class Book
     public $author;
     public $pages;
 
+    public function __construct($title, $author, $pages)
+    {
+        $this->title = $title;
+        $this->author = $author;
+        $this->pages = $pages;
+    }
+
 }
 
-$book1 = new Book;
-$book1->title = "harry potter";
-$book1->author = "jk rowling";
-$book1->pages = "1200";
+$book1 = new Book("harry potter", "jk rowling", "1200");
 
-$book2 = new Book;
-$book2->title = "Lord of the Rings";
-$book2->author = "tolkien";
-$book2->pages = "1450";
+$book2 = new Book("Lord of the rings", "tolkien", "1450");
+
+print_r($book1);
 
 print_r($book2);
 
