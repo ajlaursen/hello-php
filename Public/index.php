@@ -17,11 +17,12 @@
 
 
   <?php
-  $index = 1;
-  do{
-    echo "$index<br>";
-    $index++;
-  }while($index <= 5);
+
+  $names = array("jim", "bob", "george");
+  
+ for( $i = 0; $i < count($names); $i++){
+  echo "$names[$i]<br>";
+ };
  
 
   
