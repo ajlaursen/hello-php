@@ -9,28 +9,37 @@
 </head>
 
 <body>
+  <form action="index.php" method="post">
+    First Number: <input type="number" name="num1"> <br>
+    Operator: <input type="text" name="op"><br>
+    Second Number: <input type="number" name="num2"> <br>
+    <input type="submit">
 
+  </form>
 
 
   <?php
+  $num1 = $_POST['num1'];
+  $num2 = $_POST['num2'];
+  $op = $_POST['op'];
 
 
-
-  function getMax($num1, $num2, $num3)
+  function getCalc($num1, $num2, $op)
   {
-    if ($num1 > $num2 && $num1 > $num3) {
-      echo "$num1 is bigger than $num2 and $num3<br>";
-    } elseif ($num2 > $num1 && $num2 > $num3) {
-      echo "$num2 is bigger than $num1 and $num3<br>";
-    } else {
-      echo "$num3 is bigger than $num2 and $num1<br>";
+    if ($op == "+") {
+      echo $num1 + $num2;
+    } elseif ($op == "-") {
+      echo $num1 - $num2;
+    }elseif ($op == "*") {
+    echo $num1 * $num2;
+    }elseif ($op == "/") {
+    echo $num1 / $num2;
+    }else{
+    echo "invalid operater $op";
     }
   };
-
-  getMax(20, 30, 15);
-  getMax(40, 30, 14);
-  getMax(500, 5000, 17)
-
+  getCalc($num1, $num2, $op);
+  
 
   ?>
 
