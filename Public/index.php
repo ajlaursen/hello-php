@@ -14,15 +14,13 @@
 
   <?php
 
-  function sayHi($user)
-  {
-    echo "hello $user <br>";
-  };
+  $isMale = true;
 
-
-  sayHi("Mike");
-
-  sayHi("bob")
+  if ($isMale) {
+    echo "its a dude";
+  } else {
+    echo "its a girl";
+  }
 
 
 
