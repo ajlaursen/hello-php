@@ -13,33 +13,36 @@
 
 
   <?php
-class Student
+class Movie
 {
-    public $name;
-    public $major;
-    public $gpa;
+    public $title;
+    private $rating;
 
-    public function __construct($name, $major, $gpa)
+    public function __construct($title, $rating)
     {
-        $this->name = $name;
-        $this->major = $major;
-        $this->gpa = $gpa;
+        $this->title = $title;
+        $this->setRating($rating);
+
     }
-    public function hasHonors()
+
+    public function showRating()
     {
-        if ($this->gpa > 3.5) {
-            return "true";
+        echo $this->rating;
+    }
+    public function setRating($rating)
+    {
+        if ($rating == "R" || $rating == "PG-13" || $rating == "G" || $rating == "NR" || $rating == "PG") {
+            $this->rating = $rating;
         } else {
-            return "false";
+            $this->rating = "NR";
         }
     }
 }
 
-$student1 = new Student("jim", "business", 2.8);
-$student2 = new Student("pam", "art", 3.6);
+$movie1 = new Movie("Avengers", "DOG");
 
-echo $student1->hasHonors();
-echo $student2->hasHonors();
+$movie1->setRating("PG-13");
+$movie1->showRating();
 
 ?>
 
