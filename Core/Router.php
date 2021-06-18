@@ -52,8 +52,46 @@ class Router
         return false;
     }
 
+    public function dispatch($url)
+    {
+        if ($this->match($url)) {
+
+            $controller = $this->params['controller'];
+            $controller = $this->convertToStudlyCaps($controller);
+
+            if (class_exists($controller)) {
+
+                $controllerObject = new $controller();
+
+                $action = $this->params['action'];
+                $action = $this->convertToCamelCase($action);
+
+                if (is_callable([$controllerObject, $action])) {
+                    $controllerObject->$action();
+
+                } else {
+                    echo "Method $action (in controller $controller) not found";
+                }
+            } else {
+                echo "controller class $controller not found";
+            }
+        } else {
+            echo "no route match";
+        }
+    }
+
     public function getParams()
     {
         return $this->params;
+    }
+
+    protected function convertToStudlyCaps($string)
+    {
+        return str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
+    }
+
+    protected function convertToCamelCase($string)
+    {
+        return lcfirst($this->convertToStudlyCaps($string));
     }
 }
