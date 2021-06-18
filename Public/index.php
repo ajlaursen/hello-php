@@ -1,57 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+require '../Core/Router.php';
 
-<body>
+$router = new Router();
 
+$router->add('', ['controller' => 'Home', 'action' => 'index']);
+$router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
+$router->add('posts/new', ['controller' => 'Posts', 'action' => 'index']);
 
+// echo '<pre>';
+// var_dump($router->getRoutes());
+// echo '</pre>';
 
-  <?php
-class Chef
-{
-    public function makeChicken()
-    {
-        echo "the chef makes chicken <br>";
-    }
+$url = $_SERVER['QUERY_STRING'];
 
-    public function makeSalad()
-    {
-        echo "the chef makes Salad <br>";
-    }
-
-    public function makeSpecialDish()
-    {
-        echo "the chef makes BBQ Ribs <br>";
-    }
+if ($router->match($url)) {
+    echo '<pre>';
+    var_dump($router->getParams());
+    echo '</pre>';
+} else {
+    echo "No route found for URL '$url'";
 }
-
-class ItalianChef extends Chef
-{
-    public function makePasta()
-    {
-        echo "the chef makes pasta <br>";
-    }
-    public function makeSpecialDish()
-    {
-        echo "the chef makes lasagna <br>";
-    }
-}
-
-$chef = new Chef;
-$chef->makeSpecialDish();
-
-$chef2 = new ItalianChef;
-$chef2->makeSpecialDish();
-$chef2->makePasta()
-
-?>
-
-</body>
-
-</html>
