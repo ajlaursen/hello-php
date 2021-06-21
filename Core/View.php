@@ -5,8 +5,10 @@ namespace Core;
 class View
 {
 
-    public function render($view)
+    public function render($view, $args =[])
     {
+
+        extract($args, EXTR_SKIP)
 
         $file = "../App/Views/$view";
 
