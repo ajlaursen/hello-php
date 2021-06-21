@@ -1,5 +1,7 @@
 <?php
 
+namespace App\controllers;
+
 class Posts
 {
     public function index()
