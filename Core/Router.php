@@ -63,7 +63,9 @@ class Router
 
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
-            $controller = "App\Controllers\\$controller";
+            // $controller = "App\Controllers\\$controller";
+            // instead of hard code above we use variable below
+            $controller = $this->getNameSpace() . $controller;
 
             if (class_exists($controller)) {
 
@@ -72,11 +74,11 @@ class Router
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
 
-                if (is_callable([$controllerObject, $action])) {
+                if (preg_match('/action$/i', $action) == 0) {
                     $controllerObject->$action();
 
                 } else {
-                    echo "Method $action (in controller $controller) not found";
+                    throw new \Exception("Method $action in controller $controller cannot be called directly - remove the Action suffix to call this method");
                 }
             } else {
                 echo "controller class $controller not found";
@@ -113,5 +115,15 @@ class Router
             }
         }
         return $url;
+    }
+
+    protected function getNameSpace()
+    {
+        $namespace = 'App\Controllers\\';
+
+        if (array_key_exists('namespace', $this->params)) {
+            $namespace .= $this->params['namespace'] . '\\';
+        }
+        return $namespace;
     }
 }
