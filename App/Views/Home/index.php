@@ -9,23 +9,15 @@
 <body>
     <h1>Welcome</h1>
 
-    <?php
+<p>Hello <?php echo htmlspecialchars($name); ?></p>
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "Hello, " . htmlspecialchars($_POST['name']);
-}
-?>
+<ul>
+<?php foreach ($colors as $color): ?>
+    <li><?php echo htmlspecialchars($color); ?></li>
+<?php endforeach; ?>
+</ul>
 
 
-    <form method="post">
-        <div>
-            <label for="name">Your Name</label>
-            <input id="name" name="name" autofocus>
-        </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
-    </form>
 </body>
 
 </html>

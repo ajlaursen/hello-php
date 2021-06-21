@@ -9,6 +9,8 @@
 // Require the controller class
 //require '../App/Controllers/Posts.php';
 
+require_once dirname(__DIR__) . '/vendor/Twig/lib/Twig/Autoloader.php';
+
 /**
  * Autoloader
  */
@@ -25,7 +27,7 @@ spl_autoload_register(function ($class) {
  */
 //require '../Core/Router.php';
 
-// display errors 
+// display errors
 
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
