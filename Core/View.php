@@ -2,6 +2,8 @@
 
 namespace Core;
 
+
+
 class View
 {
 
