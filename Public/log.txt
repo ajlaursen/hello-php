@@ -1,0 +1,6 @@
+[23-Jun-2021 17:58:35 UTC] Uncaught Exception: 'ExceptionMessage: 'No route matchedStack Trace: #0 /Users/alexlaursen/Sites/Public/index.php(51): Core\Router->dispatch('products')
+#1 {main}Thrown in '/Users/alexlaursen/Sites/Core/Router.php' on line 89
+[23-Jun-2021 19:07:18 UTC] Uncaught Exception: 'ExceptionMessage: 'No route matchedStack Trace: #0 /Users/alexlaursen/Sites/Public/index.php(51): Core\Router->dispatch('poop')
+#1 {main}Thrown in '/Users/alexlaursen/Sites/Core/Router.php' on line 89
+[23-Jun-2021 19:10:20 UTC] Uncaught Exception: 'ExceptionMessage: 'No route matchedStack Trace: #0 /Users/alexlaursen/Sites/Public/index.php(51): Core\Router->dispatch('poop')
+#1 {main}Thrown in '/Users/alexlaursen/Sites/Core/Router.php' on line 89
