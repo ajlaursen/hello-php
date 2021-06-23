@@ -24,16 +24,20 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 //     }
 // });
 
-/**
- * Routing
- */
-//require '../Core/Router.php';
-
 // display errors
 
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
+
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
+
+/**
+ * Routing
+ */
+//require '../Core/Router.php';
+
 
 $router = new Core\Router();
 
